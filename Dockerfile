@@ -1,22 +1,20 @@
-# Gunakan base image Python
-FROM python:3.9
+# Menggunakan Node.js versi LTS sebagai dasar
+FROM node:14
 
-# Set working directory di dalam kontainer
+# Membuat direktori aplikasi di dalam gambar
 WORKDIR /app
 
-RUN pip install fastapi uvicorn
+# Menyalin package.json dan package-lock.json ke dalam direktori kerja
+COPY package*.json ./
 
-# Copy dependencies file ke dalam kontainer
-COPY requirements.txt .
+# Menginstal dependensi
+RUN npm install
 
-# Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy seluruh kode aplikasi ke dalam kontainer
+# Menyalin seluruh sumber kode aplikasi ke dalam gambar
 COPY . .
 
-# Expose port yang akan digunakan oleh aplikasi
-EXPOSE 80
+# Mengekspos port yang akan digunakan oleh aplikasi
+EXPOSE 3000
 
-# Jalankan aplikasi saat kontainer berjalan
-CMD ["python", "app.py"]
+# Menjalankan aplikasi saat kontainer dimulai
+CMD ["node", "app.js"]
