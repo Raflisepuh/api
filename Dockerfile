@@ -16,7 +16,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Expose port yang akan digunakan oleh aplikasi
-EXPOSE 5000
+EXPOSE 80
 
 # Jalankan aplikasi saat kontainer berjalan
 CMD ["python", "app.py"]
