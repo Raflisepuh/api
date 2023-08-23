@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "axios": "^1.4.0",
+    "axios": "^0.21.4",
     "cheerio": "^1.0.0-rc.12",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
@@ -8,19 +8,6 @@
   },
   "name": "kusonime-api",
   "version": "2.0.0",
-  "description": "Kusonime Scrapper",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KatowProject/Kusonime-API.git"
-  },
-  "author": "KatowProject",
-  "license": "CC-BY-SA-4.0",
-  "bugs": {
-    "url": "https://github.com/KatowProject/Kusonime-API/issues"
-  },
-  "homepage": "https://github.com/KatowProject/Kusonime-API#readme"
+  "description": "Kusonime Scraper",
+  "main": "app.js"
 }
