@@ -4,6 +4,8 @@ FROM python:3.9
 # Set working directory di dalam kontainer
 WORKDIR /app
 
+RUN pip install fastapi uvicorn
+
 # Copy dependencies file ke dalam kontainer
 COPY requirements.txt .
 
