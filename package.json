@@ -1,0 +1,14 @@
+{
+  "name": "web-api",
+  "version": "1.0.0",
+  "description": "Web API using Express and Cheerio",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "request-promise": "^4.2.6",
+    "cheerio": "^1.0.0-rc.3"
+  }
+}
