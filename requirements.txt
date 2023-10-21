@@ -1,4 +1,3 @@
 flask
 requests
-concurrent.futures
 faker
