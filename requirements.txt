@@ -1,4 +1,4 @@
-fastapi
-httpx
-beautifulsoup4
-uvicorn
+flask
+requests
+concurrent.futures
+faker
