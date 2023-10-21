@@ -1,20 +1,20 @@
-# Menggunakan Node.js versi LTS sebagai dasar
-FROM node:14
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim
 
-# Membuat direktori aplikasi di dalam gambar
+# Set the working directory to /app
 WORKDIR /app
 
-# Menyalin package.json dan package-lock.json ke dalam direktori kerja
-COPY package*.json ./
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-# Menginstal dependensi
-RUN npm install
+# Install any needed packages specified in requirements.txt
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
-# Menyalin seluruh sumber kode aplikasi ke dalam gambar
-COPY . .
+# Make port 80 available to the world outside this container
+EXPOSE 80
 
-# Mengekspos port yang akan digunakan oleh aplikasi
-EXPOSE 3000
+# Define environment variable
+ENV NAME World
 
-# Menjalankan aplikasi saat kontainer dimulai
-CMD ["node", "app.js"]
+# Run app.py when the container launches
+CMD ["python", "api.py"]
